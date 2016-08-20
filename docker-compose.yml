@@ -1,0 +1,23 @@
+version: '2'
+services:
+
+  cgeo-fdroid-server:
+    image: cgeo/fdroid-server
+    volumes:
+      - /srv/FDROID/repos:/apk/repo
+      - /srv/FDROID/confs:/srv
+    container_name: cgeo-fdroid-server
+    labels:
+      - "traefik.enable=false"
+    restart: unless-stopped
+
+  cgeo-fdroid-nginx:
+    image: cgeo/fdroid-nginx
+    volumes:
+      - /srv/FDROID/repos:/apk/repo
+    container_name: cgeo-fdroid-nginx
+    labels:
+      - "traefik.backend=cgeo-fdroid"
+      - "traefik.frontend.rule=Host:fdroid.cgeo.org"
+      - "traefik.port=80"
+    restart: unless-stopped
