@@ -29,7 +29,7 @@ $verbose && echo "I: Updating $1 repo"
 
 cp -a /apk/metadata $fdroid_dir/$1/
 
-if [ ! -e config.py ]; then
+if [ ! -e $fdroid_dir/$1/config.py ]; then
     echo "E: config.py file is missing. You need to create one."
     exit 1
 fi
