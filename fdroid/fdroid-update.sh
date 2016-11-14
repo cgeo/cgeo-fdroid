@@ -9,6 +9,8 @@ apk_url="http://download.cgeo.org"
 aapt="/sdk/build-tools/24.0.1/aapt"
 
 verbose=true
+version_code=""
+latest_apk=""
 
 function usage {
    echo "E: Incorrect number of arguments"
@@ -48,7 +50,9 @@ function download_apk {
 
    [[ $apk_version =~ ^[legacyNOJITBa-f0-9.-]+$ ]] || { echo "Fail to extract apk version"; exit 3; }
 
-   mv tmp-${apk}.apk ${apk}-${apk_version}.apk
+   version_code=`$aapt dump badging tmp-${apk}.apk | head -n1 | sed "s/.*versionCode='\([^ ]*\)' .*/\1/"`
+   latest_apk=${apk}-${apk_version}.apk
+   mv tmp-${apk}.apk ${latest_apk}
 }
 
 # Update indexes
@@ -56,9 +60,32 @@ function update_indexes {
    release=$1
 
    $verbose && echo "I: Updating F-Droid index"
-   cd $fdroid_dir/$release; fdroid update -c
+   cd $fdroid_dir/$release;
+   fdroid update -c && exit $?
 
-   exit $?
+   # Found duplicates versionCode :/
+   drop_duplicate_versioncode $release
+}
+
+# Drop duplicate VersionCode
+function drop_duplicate_versioncode {
+   release=$1
+   has_duplicates=false
+
+   $verbose && echo "I: Finding apk with same versionCode: $version_code"
+   cd $fdroid_dir/$release/repo
+   for apk in cgeo*.apk; do
+      vcode=`$aapt dump badging ${apk} | head -n1 | sed "s/.*versionCode='\([^ ]*\)' .*/\1/"`
+      [ "x${apk}" == "x${latest_apk}" ] && continue
+
+      $verbose && echo "I: Found ${apk} with versionCode: $vcode"
+      if [ "x$vcode" == "x$version_code" ]; then
+         has_duplicates=true
+         $verbose && echo "I: Deleting ${apk} with same versionCode: $version_code"
+         rm ${apk}
+      fi
+   done
+   $has_duplicates && update_indexes $release || { $verbose && echo "E: No duplicates version found. Abording..."; exit 4 ; }
 }
 
 
@@ -75,7 +102,7 @@ if [[ $1 == "nightly" ]]; then
    # - cgeo-nightly-nojit lead to duplicate versions
    # - Contact is not yet available
    #for apk in cgeo-nightly cgeo-nightly-nojit cgeo-calendar-nightly cgeo-contacts-nightly; do
-   for apk in cgeo-nightly cgeo-calendar-nightly; do
+   for apk in cgeo-calendar-nightly cgeo-nightly; do
       download_apk "${apk}" "${apk_url}/${apk}.apk" "nightly"
    done
    update_indexes "nightly"
