@@ -37,7 +37,7 @@ ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
 
 # Install latest android tools and system image.
-RUN echo "y" | android update sdk --no-ui --force --filter build-tools-24.0.1
+RUN echo "y" | android update sdk --all --no-ui --force --filter build-tools-24.0.1
 
 #RUN apt-get -qq update && \
 #    DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
