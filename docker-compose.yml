@@ -2,7 +2,7 @@ version: '2'
 services:
 
   cgeo-fdroid-server:
-    image: cgeo/fdroid-server
+    image: cgeo/cgeo-fdroid:fdroid
     volumes:
       - /srv/FDROID/repos:/apk/repo
       - /srv/FDROID/confs:/srv
@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
 
   cgeo-fdroid-nginx:
-    image: cgeo/fdroid-nginx
+    image: cgeo/cgeo-fdroid:nginx
     volumes:
       - /srv/FDROID/repos:/apk/repo
     container_name: cgeo-fdroid-nginx
