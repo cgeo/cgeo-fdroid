@@ -1,6 +1,6 @@
 # Compiles and installs an fdroid environment
 
-FROM ubuntu:16.04
+FROM ubuntu:artful
 MAINTAINER mathieu Alorent <cgeo@kumy.net>
 
 # Enable i386 arch (for android SDK)
@@ -21,6 +21,7 @@ RUN apt-get -qq update && \
        python3-pyasn1 \
        wget \
        zlib1g-dev \
+       software-properties-common \
        zlib1g:i386 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -39,14 +40,13 @@ ENV PATH $PATH:$ANDROID_HOME/platform-tools
 # Install latest android tools and system image.
 RUN echo "y" | android update sdk --all --no-ui --force --filter build-tools-24.0.1,platform-tools,tools
 
-#RUN apt-get -qq update && \
-#    DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
-#       python3-pyasn1
-
 # Install f-droid server
-RUN mkdir /src && cd /src && git clone https://gitlab.com/fdroid/fdroidserver.git && \
-    git clone https://gitlab.com/fdroid/fdroiddata.git && \
-    cd /src/fdroidserver && python3 setup.py install
+RUN add-apt-repository -y ppa:guardianproject/ppa \
+  && apt-get update \
+  && apt-get install -y \
+    fdroidserver \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 COPY config.py /apk/
 ADD http://www.cgeo.org/images/cgeo-logo.png /apk/
