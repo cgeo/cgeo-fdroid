@@ -52,6 +52,7 @@ COPY config.py /apk/
 ADD http://www.cgeo.org/images/logo.png /apk/
 COPY run.sh /usr/local/bin/
 COPY fdroid-update.sh /usr/local/bin/
+COPY apksigner /usr/local/bin/
 RUN chmod +x /usr/local/bin/run.sh /usr/local/bin/fdroid-update.sh
 COPY metadata /apk/metadata
 
