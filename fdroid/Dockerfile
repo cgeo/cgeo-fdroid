@@ -1,6 +1,6 @@
 # Compiles and installs an fdroid environment
 
-FROM ubuntu:artful
+FROM ubuntu:bionic
 MAINTAINER mathieu Alorent <cgeo@kumy.net>
 
 # Enable i386 arch (for android SDK)
@@ -43,8 +43,10 @@ RUN echo "y" | android update sdk --all --no-ui --force --filter build-tools-24.
 # Install f-droid server
 RUN add-apt-repository -y ppa:guardianproject/ppa \
   && apt-get update \
-  && apt-get install -y \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     fdroidserver \
+  && ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime \
+  && dpkg-reconfigure --frontend noninteractive tzdata \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
