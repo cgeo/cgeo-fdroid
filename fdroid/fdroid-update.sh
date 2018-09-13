@@ -94,15 +94,14 @@ if [[ $1 == "mainline" ]]; then
    apk=$(curl -s https://api.github.com/repos/cgeo/cgeo/releases/latest | grep 'browser_' | cut -d\" -f4)
    download_apk "cgeo-release" "$apk" "mainline"
    download_apk "cgeo-contacts" "https://github.com/cgeo/cgeo/releases/download/market_20150112/cgeo-contacts_v1.5.apk" "mainline"
-   download_apk "cgeo-calendar" "https://github.com/cgeo/cgeo/releases/download/market_20150112/c-geo-calendar_v1.5.apk" "mainline"
    update_indexes "mainline"
 fi
 
 if [[ $1 == "nightly" ]]; then
    # - cgeo-nightly-nojit lead to duplicate versions
    # - Contact is not yet available
-   #for apk in cgeo-nightly cgeo-nightly-nojit cgeo-calendar-nightly cgeo-contacts-nightly; do
-   for apk in cgeo-calendar-nightly cgeo-nightly; do
+   #for apk in cgeo-nightly cgeo-nightly-nojit cgeo-contacts-nightly; do
+   for apk in cgeo-nightly; do
       download_apk "${apk}" "${apk_url}/${apk}.apk" "nightly"
    done
    update_indexes "nightly"
