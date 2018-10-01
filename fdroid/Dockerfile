@@ -9,6 +9,7 @@ RUN dpkg --add-architecture i386
 # Required dependencies
 RUN apt-get -qq update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
+       apksigner \
        curl \
        git \
        libffi-dev \
