@@ -3,7 +3,7 @@ Categories:Entertainment
 Web Site:http://www.cgeo.org
 Source Code:https://github.com/cgeo/cgeo
 Issue Tracker:https://github.com/cgeo/cgeo/issues
-Donate:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AQBS7UP76CXW2
+Donate:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FMLNN8GXZKJEE
 Summary:c:geo
 Description:
 c:geo is an open source, full-featured, always ready-to-go client for geocaching.com (unofficial) and offers basic support for other geocaching platforms (like Opencaching). It does not require a web browser or exports - just download and start right away.
