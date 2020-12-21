@@ -3,7 +3,7 @@ Categories:Entertainment
 Web Site:http://www.cgeo.org
 Source Code:https://github.com/cgeo/cgeo
 Issue Tracker:https://github.com/cgeo/cgeo/issues
-Donate:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FMLNN8GXZKJEE
+Donate:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AQBS7UP76CXW2
 Summary:c:geo - contacts (add-on)
 Description:
 
