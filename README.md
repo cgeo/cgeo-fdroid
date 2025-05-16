@@ -1,7 +1,7 @@
 # Configuration
 
 In order to configure the two channels ("mainline" / "nightly"), you have to
-prepare two directories which should contains the file `config.py`. (Those
+prepare two directories which should contains the file `config.yml`. (Those
 directories and files will be automatically created for you at first launch
 of script `fdroid-update.sh`. However you have to set the password in the files
 to unlock the signing key.)
@@ -30,7 +30,7 @@ APK_REPO=/path/to/repos
 CONFS=/path/to/confs
 JENKINS_NODE_NAME=node-name
 JENKINS_NODE_SECRET=node-secret
-docker run -e JENKINS_NODE_NAME=$JENKINS_NODE_NAME -e JENKINS_NODE_SECRET=$JENKINS_NODE_SECRET -v $APK_REPO:/apk/repo -v $CONFS/confs:/srv cgeo/fdroid
+docker run -e JENKINS_NODE_NAME=$JENKINS_NODE_NAME -e JENKINS_NODE_SECRET=$JENKINS_NODE_SECRET -v $APK_REPO:/repo/repos -v $CONFS/confs:/confs cgeo/fdroid-server
 ```
 
 # Usage
@@ -44,3 +44,7 @@ Ex:
 ```
 fdroid-update.sh mainline
 ```
+
+# Metadata translation
+
+New metadata translation can be added in folder `fdroid/files/confs/metadata/cgeo.geocaching/<lang>/`.

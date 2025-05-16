@@ -1,0 +1,1 @@
+c:geo is an open source, unofficial client for geocaching.com and others

@@ -1,5 +1,3 @@
-FROM nginx:alpine
+FROM nginx:latest
 
-MAINTAINER mathieu Alorent <cgeo@kumy.net>
-
-COPY conf.d/ /etc/nginx/conf.d/
+COPY files/ /
