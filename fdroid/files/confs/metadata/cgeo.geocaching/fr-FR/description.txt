@@ -1,0 +1,31 @@
+c:geo est un client non officiel open source, complet et toujours prêt à l'emploi pour geocaching.com. Il offre une compatibilité de base avec d'autres plateformes de géocaching (comme Opencaching). Il ne nécessite ni navigateur web ni export : il suffit de l'installer et de démarrer immédiatement.
+
+Principales fonctionnalités :
+* Visualisez les caches sur une carte en temps réel
+* Utilisez Google Maps ou OpenStreetMaps
+* Recherchez des caches selon différents critères
+* Enregistrez vos découvertes en ligne ou hors ligne
+* Enregistrez les informations des caches sur votre appareil
+* Créez et gérez des points de cheminement
+* Naviguez à l'aide d'une boussole, d'une carte ou d'autres applications
+* Importez/exportez des fichiers GPX
+* Prise en charge complète des objets traçables
+* Fonctions de mise en cache hors ligne, y compris les cartes hors ligne
+
+c:geo est un client de géocaching simple d'utilisation et puissant, doté de nombreuses fonctionnalités supplémentaires. Il vous suffit de posséder un compte sur geocaching.com ou une autre plateforme de géocaching (comme Opencaching).
+Trouvez des caches grâce à la carte en temps réel ou à l'une des nombreuses fonctions de recherche.
+
+Naviguez jusqu'à une cache ou un point de cheminement grâce à la boussole intégrée, à la carte ou transférez les coordonnées vers diverses applications externes (Radar, Google Navigation, StreetView, Locus, Navigon, Sygic et bien d'autres).
+
+Enregistrez les informations de vos caches sur votre appareil directement depuis geocaching.com ou via l'importation de fichiers GPX pour les consulter à tout moment.
+Vous pouvez gérer vos caches enregistrées dans différentes listes et les trier et les filtrer selon vos besoins.
+Les caches enregistrées, associées à des fichiers cartographiques hors ligne ou à des cartes statiques, permettent de trouver des caches sans connexion Internet (par exemple, en déplacement).
+Les journaux peuvent être publiés en ligne ou stockés hors ligne pour être soumis ultérieurement ou exportés via des notes de terrain.
+
+Recherchez et découvrez des objets traçables, gérez votre inventaire d'objets traçables et déposez un objet traçable lors de la publication d'un journal de cache.
+
+Si vous rencontrez des problèmes lors de l'installation ou de l'utilisation de c:geo, veuillez d'abord consulter notre FAQ [https://faq.cgeo.org] ou le guide d'utilisation [https://manual.cgeo.org].
+
+Si le problème persiste, contactez l'assistance par e-mail.
+
+Pour savoir pourquoi c:geo a besoin des autorisations demandées, veuillez consulter [https://www.cgeo.org] pour obtenir une explication.

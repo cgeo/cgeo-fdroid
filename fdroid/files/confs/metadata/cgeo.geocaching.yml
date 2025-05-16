@@ -1,0 +1,19 @@
+Categories:
+  - Games
+License: Apache-2.0
+AuthorName: c:geo contributors
+WebSite: http://www.cgeo.org
+SourceCode: https://github.com/cgeo/cgeo
+IssueTracker: https://github.com/cgeo/cgeo/issues
+Translation: https://crowdin.com/project/cgeo
+Changelog: https://github.com/cgeo/cgeo/releases
+Donate: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AQBS7UP76CXW2
+Repo: https://github.com/cgeo/cgeo.git
+RepoType: git
+AntiFeatures:
+  - NonFreeNet
+
+Name: c:geo
+
+AutoUpdateMode: None
+UpdateCheckMode: None

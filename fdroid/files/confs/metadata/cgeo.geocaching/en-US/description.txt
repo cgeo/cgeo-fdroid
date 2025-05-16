@@ -1,11 +1,3 @@
-License:Apache2
-Categories:Entertainment
-Web Site:http://www.cgeo.org
-Source Code:https://github.com/cgeo/cgeo
-Issue Tracker:https://github.com/cgeo/cgeo/issues
-Donate:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AQBS7UP76CXW2
-Summary:c:geo
-Description:
 c:geo is an open source, full-featured, always ready-to-go unofficial client for geocaching.com and offers basic support for other geocaching platforms (such as Opencaching). It does not require a web browser or exports - just install it and start right away.
 
 Main features:
@@ -36,4 +28,3 @@ If you have problems installing or using c:geo please first have a look at our F
 If there are still problems, contact support via email.
 
 If you would like to know why c:geo needs the permissions requested, please check [https://www.cgeo.org] for an explanation.
-.
